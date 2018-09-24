@@ -64,10 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				E93253F72119DFC800173FD9 /* main.m */,
-				E9C4E1B9215921DC00C7B734 /* order_list_c.c */,
 				E9C4E1B7215921DC00C7B734 /* order_list_c.h */,
-				E9C4E1B8215921DC00C7B734 /* single_link_list.c */,
+				E9C4E1B9215921DC00C7B734 /* order_list_c.c */,
 				E9C4E1BA215921DC00C7B734 /* single_link_list.h */,
+				E9C4E1B8215921DC00C7B734 /* single_link_list.c */,
 			);
 			path = C_study;
 			sourceTree = "<group>";

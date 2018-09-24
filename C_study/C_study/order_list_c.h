@@ -18,7 +18,7 @@
 #define ERROR -1
 #define SUCCESS 0
 
-// 初始化顺序表
+/* 初始化顺序表 */ 
 typedef int Element;
 
 typedef struct

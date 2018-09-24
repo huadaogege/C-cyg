@@ -12,7 +12,8 @@
 void InitList(Sqlist *L)
 {
     L->elem = (Element *)malloc(LIST_INIT_MAX*sizeof(Element));//初始化指针
-    if (!L->elem) {
+    if (!L->elem)
+    {
         exit(-1);
     }
     L->length = 0;//初始化当前元素
@@ -36,7 +37,8 @@ void ClearList(Sqlist *L)
 int GetElem(Sqlist *L, int i, Element *e)
 {
     printf("元素获取:\n");
-    if (i < 1 || i > L->length) {
+    if (i < 1 || i > L->length)
+    {
         printf("index is error.\n");
         return ERROR;
     }
@@ -49,8 +51,10 @@ void LocateElem(Sqlist *L, Element *e)
 {
     printf("元素定位:\n");
     int *p = L->elem;
-    for (int i = 0; i < L->length; i ++) {
-        if (p == e) {
+    for (int i = 0; i < L->length; i ++)
+    {
+        if (p == e)
+        {
             printf("find the elem:%d, index is:%d\n", *e, i+1);
             return;
         }
@@ -62,12 +66,15 @@ int PriorElem(Sqlist *L, Element curr_e, int *pri_e)
 {
     printf("上一位元素查找:\n");
     int *p = L->elem;
-    for (int i = 0; i < L->length; i ++, p ++) {
-        if (i == 0 && *p == curr_e) {
+    for (int i = 0; i < L->length; i ++, p ++)
+    {
+        if (i == 0 && *p == curr_e)
+        {
             printf("current elem is first , no prior.\n");
             return ERROR;
         }
-        if (*p == curr_e) {
+        if (*p == curr_e)
+        {
             *pri_e = *--p;
             printf("查找到%d的上一位的元素是:%d\n", curr_e, *pri_e);
             return SUCCESS;
@@ -81,12 +88,15 @@ int NextElem(Sqlist *L, Element curr_e, int *nex_e)
 {
     printf("下一位元素查找:\n");
     int *p = L->elem;
-    for (int i = 0; i < L->length; i ++, p ++) {
-        if (i == L->length - 1 && *p == curr_e) {
+    for (int i = 0; i < L->length; i ++, p ++)
+    {
+        if (i == L->length - 1 && *p == curr_e)
+        {
             printf("current elem is the last one, no next.\n");
             return ERROR;
         }
-        if (*p == curr_e) {
+        if (*p == curr_e)
+        {
             *nex_e = * ++p;
             printf("查找到%d的下一位元素是:%d\n", curr_e, *nex_e);
             return SUCCESS;
@@ -99,14 +109,17 @@ int NextElem(Sqlist *L, Element curr_e, int *nex_e)
 int ListInsert(Sqlist *L, int i, Element e)
 {
     printf("列表插入:\n");
-    if (i < 1 || i > L->length+1) {
+    if (i < 1 || i > L->length+1)
+    {
         printf("insert index is illegal.\n");
         return ERROR;
     }
-    if (L->length == LIST_INIT_MAX) {
+    if (L->length == LIST_INIT_MAX)
+    {
         exit(-1);
     }
-    for (int j = L->length - 1; j >= i; j --) {
+    for (int j = L->length - 1; j >= i; j --)
+    {
         L->elem[j+1] = L->elem[j];
     }
     L->elem[i-1] = e;
@@ -118,11 +131,13 @@ int ListInsert(Sqlist *L, int i, Element e)
 int ListDelete(Sqlist *L, int i)
 {
     printf("列表元素删除:\n");
-    if (i < 1 || i > L->length) {
+    if (i < 1 || i > L->length)
+    {
         printf("delete index is illegal.\n");
         return ERROR;
     }
-    for (int j = i; j < L->length; j ++) {
+    for (int j = i; j < L->length; j ++)
+    {
         L->elem[j-1] = L->elem[j];
     }
     L->length --;
@@ -133,7 +148,8 @@ void ListTraverse(Sqlist *L)
 {
     printf("列表遍历:\n");
     Element *p = L->elem;
-    for (int i = 0; i < L->length; i ++, p ++) {
+    for (int i = 0; i < L->length; i ++, p ++)
+    {
         printf("第%d个元素为:%d.\n", i+1, *p);
     }
 }

@@ -11,4 +11,52 @@
 
 #include <stdio.h>
 
+/* 定义一个表示单向链表的结构体指针 */
+struct S_Element {
+    int e_id;
+    char e_data[20];
+    struct S_Element *next;
+};
+
+/* 定义一个链表的头部 */
+static struct S_Element *list_head = NULL;
+
+/* 为了保证每个链表元素id不同, 特意把e_id定义成一个全局静态变量 */
+static int list_id = 0;
+
+/**
+ 将制定元素插入到表尾
+
+ @param head 表示操作链表的头部地址
+ @param elem 将要插入的元素
+ */
+void list_add(struct S_Element **head, struct S_Element *elem);
+
+/**
+ 修改表中的元素
+ 
+ @param head 表头指针
+ @param e_id 修改的元素
+ @param content 修改的内容
+ @return fail:-1, success:0
+ */
+int list_modify(struct S_Element **head, int e_id, char *content);
+
+/**
+ 删除链表中元素
+
+ @param head 表头指针
+ @param e_id 删除的id
+ @return fail:-1, success:0
+ */
+int list_delete(struct S_Element**head, int e_id);
+
+/**
+ 遍历单向链表
+
+ @param head 将要操作的链表的头部指针
+ */
+void list_traverse(struct S_Element **head);
+
+
 #endif /* single_link_list_h */
