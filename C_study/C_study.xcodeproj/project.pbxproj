@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E93253F82119DFC800173FD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E93253F72119DFC800173FD9 /* main.m */; };
+		E9C4E1BB215921DC00C7B734 /* single_link_list.c in Sources */ = {isa = PBXBuildFile; fileRef = E9C4E1B8215921DC00C7B734 /* single_link_list.c */; };
+		E9C4E1BC215921DC00C7B734 /* order_list_c.c in Sources */ = {isa = PBXBuildFile; fileRef = E9C4E1B9215921DC00C7B734 /* order_list_c.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		E93253F42119DFC800173FD9 /* C_study */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = C_study; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93253F72119DFC800173FD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E9C4E1B7215921DC00C7B734 /* order_list_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = order_list_c.h; sourceTree = "<group>"; };
+		E9C4E1B8215921DC00C7B734 /* single_link_list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = single_link_list.c; sourceTree = "<group>"; };
+		E9C4E1B9215921DC00C7B734 /* order_list_c.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = order_list_c.c; sourceTree = "<group>"; };
+		E9C4E1BA215921DC00C7B734 /* single_link_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = single_link_list.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				E93253F72119DFC800173FD9 /* main.m */,
+				E9C4E1B9215921DC00C7B734 /* order_list_c.c */,
+				E9C4E1B7215921DC00C7B734 /* order_list_c.h */,
+				E9C4E1B8215921DC00C7B734 /* single_link_list.c */,
+				E9C4E1BA215921DC00C7B734 /* single_link_list.h */,
 			);
 			path = C_study;
 			sourceTree = "<group>";
@@ -118,7 +128,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9C4E1BC215921DC00C7B734 /* order_list_c.c in Sources */,
 				E93253F82119DFC800173FD9 /* main.m in Sources */,
+				E9C4E1BB215921DC00C7B734 /* single_link_list.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
