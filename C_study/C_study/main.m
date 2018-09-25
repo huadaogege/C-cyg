@@ -63,9 +63,9 @@ int order_list_operations(void)
  */
 int single_link_list_operations()
 {
-    struct S_Element *lists = NULL;
+    struct Node *lists = NULL;
     /* 分配10个元素 */
-    lists = malloc(sizeof(struct S_Element) * 10);
+    lists = malloc(sizeof(struct Node) * 10);
     if (lists == NULL) {
         printf("malloc failed.\n");
         return -1;
@@ -81,6 +81,7 @@ int single_link_list_operations()
     /* 删除操作 */
 //    list_delete(&list_head, 6);
     list_modify(&list_head, 5, "cuiyuguan");
+    list_reverse(&list_head);
     list_traverse(&list_head);
     return 0;
 }

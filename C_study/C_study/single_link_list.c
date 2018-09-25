@@ -7,10 +7,11 @@
 //
 
 #include "single_link_list.h"
+#include <string.h>
 
-void list_add(struct S_Element **head, struct S_Element *elem)
+void list_add(struct Node **head, struct Node *elem)
 {
-    struct S_Element *temp;
+    struct Node *temp;
     /* 链表为空*/
     if (*head == NULL)
     {
@@ -33,9 +34,9 @@ void list_add(struct S_Element **head, struct S_Element *elem)
     }
 }
 
-int list_delete(struct S_Element**head, int e_id)
+int list_delete(struct Node**head, int e_id)
 {
-    struct S_Element *temp, *p;
+    struct Node *temp, *p;
     temp = *head;
     /* 链表为空,删除失败 */
     if (temp == NULL)
@@ -69,9 +70,9 @@ int list_delete(struct S_Element**head, int e_id)
     return -1;
 }
 
-int list_modify(struct S_Element **head, int e_id, char *content)
+int list_modify(struct Node **head, int e_id, char *content)
 {
-    struct S_Element *temp;
+    struct Node *temp;
     temp = *head;
     while (temp)
     {
@@ -87,14 +88,45 @@ int list_modify(struct S_Element **head, int e_id, char *content)
     return -1;
 }
 
-void list_traverse(struct S_Element **head)
+void list_traverse(struct Node **head)
 {
-    struct S_Element *temp;
+    struct Node *temp;
     temp = *head;
     printf("list information:\n");
     while (temp)
     {
         printf("list id:%d data:%s\n", temp->e_id, temp->e_data);
         temp = temp->next;
+    }
+}
+
+struct Node* list_reverse(struct Node **head)
+{
+    struct Node *pf, *pb, *temp;
+    pf = *head;
+    if (*head == NULL)
+    {
+        printf("链表为空, 无需逆序.\n");
+        return *head;
+    }
+    else if (pf->next == NULL)
+    {
+        printf("链表的长度为1, 无需逆序.\n");
+        return *head;
+    }
+    else
+    {
+        pb = pf->next;
+        pf->next = NULL;
+        while (pb != NULL)
+        {
+            temp = pb;
+            pb = pb->next;
+            temp->next = pf;
+            pf = temp;
+        }
+        *head = pf;
+        printf("链表逆序完成.\n");
+        return *head;
     }
 }
