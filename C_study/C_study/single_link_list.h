@@ -66,5 +66,13 @@ void list_traverse(struct Node **head);
  */
 struct Node* list_reverse(struct Node **head);
 
+/**
+ 判断一个表是否是一个循环链表
+
+ @param head 表头指针
+ @return fail:-1, success:0
+ */
+int JudgeCircularList(struct Node *head);
+
 
 #endif /* single_link_list_h */

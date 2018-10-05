@@ -130,3 +130,24 @@ struct Node* list_reverse(struct Node **head)
         return *head;
     }
 }
+
+int JudgeCircularList(struct Node *head)
+{
+    if (head == NULL || head->next == NULL)
+    {
+        printf("该链表不是一个循环链表.\n");
+        return -1;
+    }
+    struct Node *tail;
+    tail = head->next;
+    while (tail != NULL && tail != head)
+    {
+        tail = tail->next;
+    }
+    if (tail == NULL) {
+        printf("该链表不是一个循环链表.\n");
+        return -1;
+    }
+    printf("该链表是一个循环链表.\n");
+    return 0;
+}
