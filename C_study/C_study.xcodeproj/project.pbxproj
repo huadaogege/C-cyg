@@ -10,6 +10,7 @@
 		E93253F82119DFC800173FD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E93253F72119DFC800173FD9 /* main.m */; };
 		E9C4E1BB215921DC00C7B734 /* single_link_list.c in Sources */ = {isa = PBXBuildFile; fileRef = E9C4E1B8215921DC00C7B734 /* single_link_list.c */; };
 		E9C4E1BC215921DC00C7B734 /* order_list_c.c in Sources */ = {isa = PBXBuildFile; fileRef = E9C4E1B9215921DC00C7B734 /* order_list_c.c */; };
+		E9E700452166FF0500BB08CC /* stack.c in Sources */ = {isa = PBXBuildFile; fileRef = E9E700442166FF0500BB08CC /* stack.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		E9C4E1B8215921DC00C7B734 /* single_link_list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = single_link_list.c; sourceTree = "<group>"; };
 		E9C4E1B9215921DC00C7B734 /* order_list_c.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = order_list_c.c; sourceTree = "<group>"; };
 		E9C4E1BA215921DC00C7B734 /* single_link_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = single_link_list.h; sourceTree = "<group>"; };
+		E9E700432166FF0500BB08CC /* stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
+		E9E700442166FF0500BB08CC /* stack.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = stack.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				E9C4E1B9215921DC00C7B734 /* order_list_c.c */,
 				E9C4E1BA215921DC00C7B734 /* single_link_list.h */,
 				E9C4E1B8215921DC00C7B734 /* single_link_list.c */,
+				E9E700432166FF0500BB08CC /* stack.h */,
+				E9E700442166FF0500BB08CC /* stack.c */,
 			);
 			path = C_study;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			files = (
 				E9C4E1BC215921DC00C7B734 /* order_list_c.c in Sources */,
 				E93253F82119DFC800173FD9 /* main.m in Sources */,
+				E9E700452166FF0500BB08CC /* stack.c in Sources */,
 				E9C4E1BB215921DC00C7B734 /* single_link_list.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

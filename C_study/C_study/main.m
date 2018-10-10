@@ -9,12 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "order_list_c.h"
 #import "single_link_list.h"
+#import "stack.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         printf("hello, world.");
 //        order_list_operations();
-        single_link_list_operations();
+//        single_link_list_operations();
+        stack_operations();
     }
     return 0;
 }
@@ -83,5 +85,32 @@ int single_link_list_operations()
     list_modify(&list_head, 5, "cuiyuguan");
     list_reverse(&list_head);
     list_traverse(&list_head);
+    return 0;
+}
+
+int stack_operations()
+{
+    Stack s;
+    int N = 0;
+    int temp = 0;
+    InitStack(&s);
+    printf("初始化时，栈的大小为：%d\n", s.stackSize);
+    printf("请输入你想输入的数据进栈:\n");
+    scanf("%d", &N) ;
+    while (N--)
+    {
+        scanf("%d", &temp);
+        Push(&s, &temp);
+        printf("进栈的大小为：%d\t",temp);
+        printf("压栈后，栈的大小为：%d,%d\n", temp, s.stackSize);
+    }
+    
+    /**得到栈顶元素**/
+    GetTop(&s, temp);
+    printf("得到栈顶元素为：%d", temp);
+    
+//    Destroy_Stack(&s);
+    printf("销毁栈完成！！\n");
+    scanf("%d",&temp);
     return 0;
 }
