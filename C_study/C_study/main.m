@@ -124,12 +124,13 @@ int Dinary_Tree_operations()
     tree.cnt = 0;
     
     insert_data(&tree, 50);
-    travel_data(&tree);
+    PreOrderTraverl(&tree);
     insert_data(&tree,70);
-    travel_data(&tree);
+    PreOrderTraverl(&tree);
     insert_data(&tree,20);
-    travel_data(&tree);//20 50 70
+    PreOrderTraverl(&tree);//20 50 70
     insert_data(&tree,60);
-    travel_data(&tree);
+    PreOrderTraverl(&tree);
+    int depth = depth_Tree(tree.root);
     return 0;
 }

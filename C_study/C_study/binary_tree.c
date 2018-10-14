@@ -8,8 +8,9 @@
 
 #include "binary_tree.h"
 
-//插入新节点的递归函数
-void insert(Node** pRoot,Node* pn)
+#pragma mark -- 插入操作 --
+/* 插入新节点的递归函数 */
+void insert(TNode** pRoot,TNode* pn)
 {
     //1.判断二叉树是否为空,如果为空则让根节点指针直接指向新节点
     if(NULL == *pRoot)
@@ -30,7 +31,7 @@ void insert(Node** pRoot,Node* pn)
     }
 }
 
-//实现向有序二叉树中插入新节点的操作
+/* 实现向有序二叉树中插入新节点的操作 */
 void insert_data(Tree* pt,int data)
 {
     //1.创建新节点，进行初始化 create_node
@@ -44,8 +45,9 @@ void insert_data(Tree* pt,int data)
     pt->cnt++;
 }
 
-//遍历的递归函数
-void travel(Node* pRoot)
+#pragma mark -- 遍历二叉树操作 --
+/* 遍历的递归函数 */
+void travel(TNode* pRoot)
 {
     //判断二叉树不为空时才需要遍历
     if(pRoot != NULL)
@@ -59,7 +61,7 @@ void travel(Node* pRoot)
     }
 }
 
-//采用中序遍历方法进行遍历
+/* 采用中序遍历方法进行遍历 */
 void travel_data(Tree* pt)
 {
     //调用递归函数进行遍历
@@ -68,26 +70,47 @@ void travel_data(Tree* pt)
     printf("\n");
 }
 
-//实现创建新节点
-Node* create_node(int data)
+/* 非递归遍历二叉树 */
+void PreOrderTraverl(Tree *t)
 {
-    Node* pn = (Node*)malloc(sizeof(Node));
-    pn->data = data;
-    pn->left = NULL;
-    pn->right = NULL;
-    return pn;
+    TNode *root = t->root;
+    TNode *stack[100];
+    int top = -1;
+    TNode *p;
+    if (root != NULL)
+    {
+        top ++;
+        stack[top] = root;
+        while (top > -1)
+        {
+            p = stack[top];
+            top--;
+            printf("%d \n", p->data);
+            if (p->right != NULL)
+            {
+                top ++;
+                stack[top] = p->right;
+            }
+            if (p->left != NULL)
+            {
+                top ++;
+                stack[top] = p->left;
+            }
+        }
+    }
 }
 
-//实现查找一个指定的节点
-//返回 指向目标元素所在节点的指针 的地址
-Node** find_data(Tree* pt,int data)
+#pragma mark -- 二叉树查找 --
+/* 实现查找一个指定的节点 */
+/* 返回 指向目标元素所在节点的指针 的地址 */
+TNode** find_data(Tree* pt,int data)
 {
     //调用递归函数实现查找
     return find(&pt->root,data);
 }
 
-//查找的递归函数
-Node** find(Node** pRoot,int data)
+/* 查找的递归函数 */
+TNode** find(TNode** pRoot,int data)
 {
     //1.判断二叉树是否为空，为空直接返回
     if(NULL == *pRoot)
@@ -111,11 +134,12 @@ Node** find(Node** pRoot,int data)
     }
 }
 
-//实现删除指定的节点
+#pragma mark -- 二叉树删除 --
+/* 实现删除指定的节点 */
 void del_data(Tree* pt,int data)
 {
     //1.查找目标元素所在节点的地址
-    Node** pp = find_data(pt,data);
+    TNode** pp = find_data(pt,data);
     //2.判断查找失败情况,不需要删除
     if(NULL == *pp)
     {
@@ -129,7 +153,7 @@ void del_data(Tree* pt,int data)
         insert(&(*pp)->right,(*pp)->left);
     }
     //4.寻找指针记录要删除的节点地址
-    Node* q = *pp;
+    TNode* q = *pp;
     //5.将原来指向要删除节点的指针 重新指向 合并之后的右子树
     *pp = (*pp)->right;
     //6.删除目标元素所在的节点
@@ -139,8 +163,8 @@ void del_data(Tree* pt,int data)
     pt->cnt--;
 }
 
-//实现清空的递归函数
-void clearT(Node** pRoot)
+/* 实现清空的递归函数 */
+void clearT(TNode** pRoot)
 {
     //判断二叉树是否为空
     if(*pRoot != NULL)
@@ -155,7 +179,7 @@ void clearT(Node** pRoot)
     }
 }
 
-//实现清空树中的所有节点
+/* 实现清空树中的所有节点 */
 void clear_data(Tree* pt)
 {
     //调用递归函数实现清空
@@ -164,8 +188,8 @@ void clear_data(Tree* pt)
     pt->cnt = 0;
 }
 
-//修改指定元素的操作
-//旧元素不存在时，直接插入新元素即可
+/* 修改指定元素的操作 */
+/* 旧元素不存在时，直接插入新元素即可 */
 void modify(Tree* pt,int data,int new_data)
 {
     //1.删除旧元素
@@ -173,22 +197,28 @@ void modify(Tree* pt,int data,int new_data)
     //2.插入新元素
     insert_data(pt,new_data);
 }
-//判断二叉树是否为空
+
+#pragma mark -- 二叉树的判断 --
+/* 判断二叉树是否为空 */
 int empty(Tree* pt)
 {
     return NULL == pt->root;
 }
-//判断二叉树是否为满
-int full(Tree* pt)
+/* 判断二叉树是否为满 */
+int isFullTree(TNode *root)
 {
-    return 0;
+    if (root == NULL)
+    {
+        return 0;
+    }
+    if ((root->left == NULL && root->right != NULL) || (root->left != NULL && root->right == NULL))
+    {
+        return -1;
+    }
+    return isFullTree(root->left) && isFullTree(root->right);
 }
-//计算二叉树中节点的个数
-int size(Tree* pt)
-{
-    return pt->cnt;
-}
-//获取根节点的元素值
+
+/* 获取根节点的元素值 */
 int get_root(Tree* pt)
 {
     if(empty(pt))
@@ -196,6 +226,47 @@ int get_root(Tree* pt)
         return -1;//表示失败(以后讲到)
     }
     return pt->root->data;
+}
+
+/* 实现创建新节点 */
+TNode* create_node(int data)
+{
+    TNode* pn = (TNode*)malloc(sizeof(TNode));
+    pn->data = data;
+    pn->left = NULL;
+    pn->right = NULL;
+    return pn;
+}
+
+#pragma mark -- 二叉树的计算 --
+/* 计算二叉树中节点的个数 */
+int size(Tree* pt)
+{
+    return pt->cnt;
+}
+
+/* 计算二叉树的深度 */
+int depth_Tree(TNode *root)
+{
+    int LDepth = 0;
+    int RDepth = 0;
+    if (root == NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        LDepth = depth_Tree(root->left);
+        RDepth = depth_Tree(root->right);
+        if (LDepth > RDepth)
+        {
+            return LDepth + 1;
+        }
+        else
+        {
+            return RDepth + 1;
+        }
+    }
 }
 
 

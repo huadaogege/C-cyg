@@ -15,14 +15,14 @@
 typedef struct
 {
     int data;//数据内容
-    struct Node* left;//指向左子树
-    struct Node* right;//指向右子树
-}Node;
+    struct TNode* left;//指向左子树
+    struct TNode* right;//指向右子树
+}TNode;
 
 //定义有序二叉树的数据类型
 typedef struct
 {
-    Node* root;//记录根节点的地址
+    TNode* root;//记录根节点的地址
     int cnt;//记录节点的个数
 }Tree;
 
@@ -30,28 +30,31 @@ typedef struct
 void insert_data(Tree* pt,int data);
 
 /* 插入新节点的递归函数 */
-void insert(Node** pRoot,Node* pn);
+void insert(TNode** pRoot,TNode* pn);
 
 /* 采用中序遍历方法进行遍历 */
 void travel_data(Tree* pt);
 
 /* 遍历的递归函数 */
-void travel(Node* pRoot);
+void travel(TNode* pRoot);
+
+/* 非递归遍历二叉树 */
+void PreOrderTraverl(Tree *t);
 
 /* 实现创建新节点 */
-Node* create_node(int data);
+TNode* create_node(int data);
 
 /* 实现查找一个指定的节点 */
-Node** find_data(Tree* pt,int data);
+TNode** find_data(Tree* pt,int data);
 
 /* 查找的递归函数 */
-Node** find(Node** pRoot,int data);
+TNode** find(TNode** pRoot,int data);
 
 /* 实现删除指定的节点 */
 void del_data(Tree* pt,int data);
 
 //实现清空的递归函数
-void clearT(Node** pRoot);
+void clearT(TNode** pRoot);
 
 //实现清空树中的所有节点
 void clear_data(Tree* pt);
@@ -70,5 +73,8 @@ int size(Tree* pt);
 
 /* 获取根节点的元素值 */
 int get_root(Tree* pt);
+
+/* 计算二叉树的深度 */
+int depth_Tree(TNode *root);
 
 #endif /* binary_tree_h */
