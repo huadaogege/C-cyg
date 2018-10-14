@@ -10,13 +10,15 @@
 #import "order_list_c.h"
 #import "single_link_list.h"
 #import "stack.h"
+#import "binary_tree.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         printf("hello, world.");
 //        order_list_operations();
 //        single_link_list_operations();
-        stack_operations();
+//        stack_operations();
+        Dinary_Tree_operations();
     }
     return 0;
 }
@@ -112,5 +114,22 @@ int stack_operations()
 //    Destroy_Stack(&s);
     printf("销毁栈完成！！\n");
     scanf("%d",&temp);
+    return 0;
+}
+
+int Dinary_Tree_operations()
+{
+    Tree tree;
+    tree.root = NULL;
+    tree.cnt = 0;
+    
+    insert_data(&tree, 50);
+    travel_data(&tree);
+    insert_data(&tree,70);
+    travel_data(&tree);
+    insert_data(&tree,20);
+    travel_data(&tree);//20 50 70
+    insert_data(&tree,60);
+    travel_data(&tree);
     return 0;
 }
