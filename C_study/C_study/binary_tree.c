@@ -70,7 +70,9 @@ void travel_data(Tree* pt)
     printf("\n");
 }
 
-/* 非递归遍历二叉树 */
+/* 非递归遍历二叉树
+ * 在二叉树先序遍历非递归算法中，先将根结点压栈，在栈不为空的时候执行循环:让栈顶元素p出栈，访问栈顶元素p，如果p的右孩子不为空,让右孩子先进栈，如果p的左孩子不为空，则再让其左孩子进栈(注意：进栈顺序一定是先右孩子，再左孩子)
+ */
 void PreOrderTraverl(Tree *t)
 {
     TNode *root = t->root;
@@ -80,17 +82,20 @@ void PreOrderTraverl(Tree *t)
     if (root != NULL)
     {
         top ++;
+        //根节点入栈
         stack[top] = root;
         while (top > -1)
         {
             p = stack[top];
             top--;
             printf("%d \n", p->data);
+            //右孩子入栈
             if (p->right != NULL)
             {
                 top ++;
                 stack[top] = p->right;
             }
+            //左孩子入栈
             if (p->left != NULL)
             {
                 top ++;
