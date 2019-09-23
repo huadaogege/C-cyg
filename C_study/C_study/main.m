@@ -11,15 +11,68 @@
 #import "single_link_list.h"
 #import "stack.h"
 #import "binary_tree.h"
+#import "sort.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        /*
         printf("hello, world.");
-//        order_list_operations();
-//        single_link_list_operations();
-//        stack_operations();
+        order_list_operations();
+        single_link_list_operations();
+        stack_operations();
         Dinary_Tree_operations();
+         */
+
+        // 排序算法
+        sort_actions();
+        
     }
+    return 0;
+}
+
+/**
+ 排序
+ */
+int sort_actions(void)
+{
+    // 冒泡排序
+    /*
+    int arr[] = {3, 1, 4, 2, 7, 5, 6, 9};
+    int len = sizeof(arr) / sizeof(arr[0]);
+    int *result = bubbleSort(arr, len);
+    for (int i = 0; i < len; i ++) {
+        printf("%d\x20", result[i]);
+    }
+     */
+    
+    // 选择排序
+    /*
+    int arr[] = {3, 1, 4, 2, 7, 5, 6, 9};
+    int len = sizeof(arr) / sizeof(arr[0]);
+    int *result = selectSort(arr, len);
+    for (int i = 0; i < len; i ++) {
+        printf("%d\x20", result[i]);
+    }
+     */
+    
+    // 归并排序
+    /*
+    int a[8] = {50, 10, 20, 30, 70, 40, 80, 60};
+    int i, b[8];
+    MergeSort(a, b, 0, 7);
+    for(i=0; i<8; i++)
+        printf("%d ", a[i]);
+    printf("\n");
+     */
+    
+    // 快速排序
+    int arr[] = { 49, 38, 65, 97, 23, 22, 76, 1, 5, 8, 2, 0, -1, 25 };
+    int len = sizeof(arr) / sizeof(arr[0]);
+    quick_Sort(arr, 0, len-1);
+    for (int i = 0; i < len; i ++) {
+        printf("%d\x20", arr[i]);
+    }
+    
     return 0;
 }
 
