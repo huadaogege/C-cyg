@@ -32,4 +32,9 @@ void MergeSort(int sourceArr[], int tempArr[], int startIndex, int endIndex);
  */
 void quick_Sort(int arr[], int low, int high);
 
+/**
+ 插入排序
+ */
+void insert_Sort(int arr[], int len);
+
 #endif /* sort_h */

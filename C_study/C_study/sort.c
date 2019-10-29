@@ -116,3 +116,36 @@ int getIndex(int arr[], int low, int high)
     return low;
 }
 
+# pragma mark -- 插入排序 --
+
+/**
+ 插入排序
+ */
+void insert_Sort(int arr[], int len) {
+    int i,j;
+    int temp;
+    int first = 0;
+    int last = len-1;
+    for(i = first+1 ;i < last; i ++) {
+        temp=arr[i];
+        j= i-1;
+        //与已排序的数逐一比较，大于temp时，该数移后
+        while((j >= 0) && (arr[j] > temp)) {
+            arr[j+1] = arr[j];
+            j--;
+        }
+        //存在大于temp的数
+        if(j != i-1)
+            arr[j+1] = temp;
+        forIn(arr, len);
+    }
+}
+
+int forIn(int arr[], len) {
+    printf("\n");
+    for (int i = 0; i < len; i ++) {
+        printf("%d\x20", arr[i]);
+    }
+    return 0;
+}
+

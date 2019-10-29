@@ -66,12 +66,23 @@ int sort_actions(void)
      */
     
     // 快速排序
+    /*
     int arr[] = { 49, 38, 65, 97, 23, 22, 76, 1, 5, 8, 2, 0, -1, 25 };
     int len = sizeof(arr) / sizeof(arr[0]);
     quick_Sort(arr, 0, len-1);
     for (int i = 0; i < len; i ++) {
         printf("%d\x20", arr[i]);
     }
+     */
+    
+    // 插入排序
+    int arr[] = { 49, 38, 65, 97, 23, 22, 76, 1, 5, 8, 2, 0, -1, 25 };
+    int len = sizeof(arr) / sizeof(arr[0]);
+    insert_Sort(arr, len);
+    for (int i = 0; i < len; i ++) {
+        printf("%d\x20", arr[i]);
+    }
+    
     
     return 0;
 }
