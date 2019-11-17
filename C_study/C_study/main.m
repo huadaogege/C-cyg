@@ -22,9 +22,6 @@ int main(int argc, const char * argv[]) {
         stack_operations();
         Dinary_Tree_operations();
          */
-
-        // 排序算法
-        sort_actions();
         
     }
     return 0;

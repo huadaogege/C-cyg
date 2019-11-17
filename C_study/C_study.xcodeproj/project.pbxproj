@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E93253F82119DFC800173FD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E93253F72119DFC800173FD9 /* main.m */; };
 		E9666FFD2338955E00CA277F /* sort.c in Sources */ = {isa = PBXBuildFile; fileRef = E9666FFC2338955E00CA277F /* sort.c */; };
+		E9976CF9237FFC0E00BCBAB0 /* exercises.c in Sources */ = {isa = PBXBuildFile; fileRef = E9976CF8237FFC0E00BCBAB0 /* exercises.c */; };
 		E9C3BF0B217231EE006E6266 /* binary_tree.c in Sources */ = {isa = PBXBuildFile; fileRef = E9C3BF0A217231EE006E6266 /* binary_tree.c */; };
 		E9C4E1BB215921DC00C7B734 /* single_link_list.c in Sources */ = {isa = PBXBuildFile; fileRef = E9C4E1B8215921DC00C7B734 /* single_link_list.c */; };
 		E9C4E1BC215921DC00C7B734 /* order_list_c.c in Sources */ = {isa = PBXBuildFile; fileRef = E9C4E1B9215921DC00C7B734 /* order_list_c.c */; };
@@ -32,6 +33,8 @@
 		E93253F72119DFC800173FD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E9666FFB2338955E00CA277F /* sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sort.h; sourceTree = "<group>"; };
 		E9666FFC2338955E00CA277F /* sort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sort.c; sourceTree = "<group>"; };
+		E9976CF7237FFC0E00BCBAB0 /* exercises.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = exercises.h; sourceTree = "<group>"; };
+		E9976CF8237FFC0E00BCBAB0 /* exercises.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = exercises.c; sourceTree = "<group>"; };
 		E9C3BF09217231EE006E6266 /* binary_tree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = binary_tree.h; sourceTree = "<group>"; };
 		E9C3BF0A217231EE006E6266 /* binary_tree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = binary_tree.c; sourceTree = "<group>"; };
 		E9C4E1B7215921DC00C7B734 /* order_list_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = order_list_c.h; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 				E9C3BF0A217231EE006E6266 /* binary_tree.c */,
 				E9666FFB2338955E00CA277F /* sort.h */,
 				E9666FFC2338955E00CA277F /* sort.c */,
+				E9976CF7237FFC0E00BCBAB0 /* exercises.h */,
+				E9976CF8237FFC0E00BCBAB0 /* exercises.c */,
 			);
 			path = C_study;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 				E9C4E1BC215921DC00C7B734 /* order_list_c.c in Sources */,
 				E93253F82119DFC800173FD9 /* main.m in Sources */,
 				E9E700452166FF0500BB08CC /* stack.c in Sources */,
+				E9976CF9237FFC0E00BCBAB0 /* exercises.c in Sources */,
 				E9666FFD2338955E00CA277F /* sort.c in Sources */,
 				E9C3BF0B217231EE006E6266 /* binary_tree.c in Sources */,
 				E9C4E1BB215921DC00C7B734 /* single_link_list.c in Sources */,
